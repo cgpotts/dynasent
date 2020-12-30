@@ -1,0 +1,364 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+  <div class="row col-xs-12 col-md-12"><!-- Instructions -->
+    <div class="panel panel-primary">
+      <div class="panel-heading"><strong>Instructions</strong></div>
+      <div class="panel-body">
+	<p>You will be shown 10 sentences from reviews of products and services. For each, your task is to choose from one of four labels:</p>
+	  <ul>
+	    <li><span class="posTag">Positive</span>: The sentence conveys information about the author's <strong>positive evaluative sentiment</strong>.</li>
+	    <li><span class="negTag">Negative</span>: The sentence conveys information about the author's <strong>negative evaluative sentiment</strong>.</li>
+	    <li><span class="noneTag">No sentiment</span>: The sentence <strong>does not convey anything</strong> about the author's positive or negative sentiment.</li>
+	    <li><span class="mixedTag">Mixed sentiment</span>: The sentence conveys <strong>a mix of positive and negative sentiment</strong> with <strong>no clear overall sentiment</strong>.</li>
+	  </ul>
+	<p>Here are some simple examples of the labels:</p>
+	<ul>
+		<li>Sentence: <span class="target">This is an under-appreciated little gem of a movie.</span><br/>This is <span class="posTag">Positive</span> because it expresses a positive overall opinion.</li>
+		<li>Sentence: <span class="target">I asked for my steak medium-rare, and they delivered this perfectly!</span><br/>This is <span class="posTag">Positive</span> because it puts a positive spin on an aspect of the author's experience.</li>
+		<li>Sentence: <span class="target">The screen on this device is a little too bright.</span><br/>This is <span class="negTag">Negative</span> because it negatively evaluates an aspect of the product.</li>
+		<li>Sentence: <span class="target">The book is 972 pages long.</span><br/>This is <span class="noneTag">No sentiment</span> because it describes a factual matter with no evaluative component.</li>
+		<li>Sentence: <span class="target">The waiting room is drab but the examination rooms are cheery enough.</span><br/>This is <span class="mixedTag">Mixed sentiment</span> because two different sentiment evaluations are balanced against each other.</li>
+		<li>Sentence: <span class="target">The entrees are delicious, but the service is so bad that it's not worth going.</span><br/>This is <span class="negTag">Negative</span> because the negative statement outweighs the positive one.</li>
+	</ul>
+
+      </div>
+    </div>
+    <!-- End Instructions --><!-- Content Body -->
+
+	<crowd-form>
+
+    
+    <fieldset><label>1</label>
+    <p>Sentence: <span class="target">${Item_1_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item1_positive" name="item1_answer" type="radio" value="positive" />
+        <label for="item1_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item1_negative" name="item1_answer" type="radio" value="negative" />
+        <label for="item1_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item1_nosentiment" name="item1_answer" type="radio" value="nosentiment" />
+        <label for="item1_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item1_mixed" name="item1_answer" type="radio" value="mixed" />
+        <label for="item1_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>2</label>
+    <p>Sentence: <span class="target">${Item_2_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item2_positive" name="item2_answer" type="radio" value="positive" />
+        <label for="item2_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item2_negative" name="item2_answer" type="radio" value="negative" />
+        <label for="item2_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item2_nosentiment" name="item2_answer" type="radio" value="nosentiment" />
+        <label for="item2_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item2_mixed" name="item2_answer" type="radio" value="mixed" />
+        <label for="item2_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>3</label>
+    <p>Sentence: <span class="target">${Item_3_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item3_positive" name="item3_answer" type="radio" value="positive" />
+        <label for="item3_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item3_negative" name="item3_answer" type="radio" value="negative" />
+        <label for="item3_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item3_nosentiment" name="item3_answer" type="radio" value="nosentiment" />
+        <label for="item3_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item3_mixed" name="item3_answer" type="radio" value="mixed" />
+        <label for="item3_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>4</label>
+    <p>Sentence: <span class="target">${Item_4_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item4_positive" name="item4_answer" type="radio" value="positive" />
+        <label for="item4_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item4_negative" name="item4_answer" type="radio" value="negative" />
+        <label for="item4_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item4_nosentiment" name="item4_answer" type="radio" value="nosentiment" />
+        <label for="item4_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item4_mixed" name="item4_answer" type="radio" value="mixed" />
+        <label for="item4_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>5</label>
+    <p>Sentence: <span class="target">${Item_5_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item5_positive" name="item5_answer" type="radio" value="positive" />
+        <label for="item5_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item5_negative" name="item5_answer" type="radio" value="negative" />
+        <label for="item5_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item5_nosentiment" name="item5_answer" type="radio" value="nosentiment" />
+        <label for="item5_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item5_mixed" name="item5_answer" type="radio" value="mixed" />
+        <label for="item5_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>6</label>
+    <p>Sentence: <span class="target">${Item_6_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item6_positive" name="item6_answer" type="radio" value="positive" />
+        <label for="item6_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item6_negative" name="item6_answer" type="radio" value="negative" />
+        <label for="item6_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item6_nosentiment" name="item6_answer" type="radio" value="nosentiment" />
+        <label for="item6_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item6_mixed" name="item6_answer" type="radio" value="mixed" />
+        <label for="item6_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>7</label>
+    <p>Sentence: <span class="target">${Item_7_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item7_positive" name="item7_answer" type="radio" value="positive" />
+        <label for="item7_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item7_negative" name="item7_answer" type="radio" value="negative" />
+        <label for="item7_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item7_nosentiment" name="item7_answer" type="radio" value="nosentiment" />
+        <label for="item7_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item7_mixed" name="item7_answer" type="radio" value="mixed" />
+        <label for="item7_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>8</label>
+    <p>Sentence: <span class="target">${Item_8_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item8_positive" name="item8_answer" type="radio" value="positive" />
+        <label for="item8_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item8_negative" name="item8_answer" type="radio" value="negative" />
+        <label for="item8_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item8_nosentiment" name="item8_answer" type="radio" value="nosentiment" />
+        <label for="item8_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item8_mixed" name="item8_answer" type="radio" value="mixed" />
+        <label for="item8_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>9</label>
+    <p>Sentence: <span class="target">${Item_9_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item9_positive" name="item9_answer" type="radio" value="positive" />
+        <label for="item9_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item9_negative" name="item9_answer" type="radio" value="negative" />
+        <label for="item9_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item9_nosentiment" name="item9_answer" type="radio" value="nosentiment" />
+        <label for="item9_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item9_mixed" name="item9_answer" type="radio" value="mixed" />
+        <label for="item9_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+    <fieldset><label>10</label>
+    <p>Sentence: <span class="target">${Item_10_Sentence}</span></p>
+    <div class="rgroup">
+        <input id="item10_positive" name="item10_answer" type="radio" value="positive" />
+        <label for="item10_positive"><span class="posTag">Positive</span>: The sentence conveys information about the author's positive evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item10_negative" name="item10_answer" type="radio" value="negative" />
+        <label for="item10_negative"><span class="negTag">Negative</span>: The sentence conveys information about the author's negative evaluative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item10_nosentiment" name="item10_answer" type="radio" value="nosentiment" />
+        <label for="item10_nosentiment"><span class="noneTag">No sentiment</span>: The sentence does not convey anything about the author's positive or negative sentiment.</label>
+    </div>
+
+    <div class="rgroup">
+        <input id="item10_mixed" name="item10_answer" type="radio" value="mixed" />
+        <label for="item10_mixed"><span class="mixedTag">Mixed sentiment</span>: The sentence conveys a mix of positive and negative sentiment with no clear overall sentiment.</label>
+    </div>
+    </fieldset>
+
+
+
+	<br /><br />
+
+	<div>
+  		<p>If you have any questions/suggestions about this task, feel free to leave a comment here. We appreciate your input on this task.</p>
+		<!--<input id="comment-final" name="comment-final" type="text" size=100/>-->
+		<crowd-input name="comment-final"  placeholder="Comment..."></crowd-input>
+	</div>
+
+    </crowd-form>
+
+  </div><!-- End Content Body -->
+</section> <!-- close container -->
+
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+}
+
+li { padding: 5px;}
+
+.rgroup {
+  display: block;
+  }
+
+.rgroup label {
+  display: inline-block;
+  padding: 5px 5px;
+}
+.rgroup input {
+width: 14px;
+
+}
+
+.negTag { background-color: #FE6100; }
+.posTag { background-color: #648FFF; }
+.noneTag { background-color: #CCCCCC; }
+.mixedTag { background-color: #FFB000; }
+
+.posTag, .negTag, .noneTag, .mixedTag {
+  padding: 0px 5px;
+}
+.target {
+	background-color: white;
+	border: 1px solid #BBBBBB;
+	
+}
+
+</style>
+
+
+<script>
+
+var totalItems = 10;
+
+function validateForm() {
+    var numSelected = 0;
+    for (var i = 1; i <= totalItems; i++) {
+        var radios = document.getElementsByName("item" + i.toString() + "_answer");
+    	for (var j = 0, length=radios.length; j < length; j++) {
+            if (radios[j].checked) {
+                numSelected++;
+            }
+    	}
+    }
+    return numSelected;
+}
+
+
+document.querySelector('crowd-form').onsubmit = function(e) {
+    var numSelected = validateForm();
+    if (numSelected !== totalItems) {
+        alert("You must label all sentences before submitting. \nYou have labeled " + numSelected.toString() + " out of " + totalItems + " sentences.");
+        e.preventDefault();
+    } else {
+        alert("HIT complete! Thanks for your help!");
+    }
+}
+
+</script>

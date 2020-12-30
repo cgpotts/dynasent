@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Custom
+
+dynasent-v1/*
+img/*
+!img/.keepdir
+
+.DS_Store

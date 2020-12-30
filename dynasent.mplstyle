@@ -1,0 +1,77 @@
+# adapted from http://www.huyng.com/posts/sane-color-scheme-for-matplotlib/
+
+patch.linewidth: 0.5
+patch.edgecolor: black
+patch.facecolor: black
+patch.force_edgecolor: False
+patch.antialiased: True
+
+font.size: 20.0
+font.family: serif
+
+axes.facecolor: FFFFFF
+axes.edgecolor: 000000
+axes.linewidth: 1
+axes.grid: True
+axes.titlesize: xx-large
+axes.labelsize: 17.0
+axes.labelcolor: 000000
+axes.axisbelow: True       # grid/ticks are below elements (e.g., lines, text)
+
+axes.prop_cycle: cycler('color', ['E24A33', '348ABD', '988ED5', '777777', 'FBC15E', '8EBA42', 'FFB5B8'])
+                   # E24A33 : red
+                   # 348ABD : blue
+                   # 988ED5 : purple
+                   # 777777 : gray
+                   # FBC15E : yellow
+                   # 8EBA42 : green
+                   # FFB5B8 : pink
+
+xtick.color: 000000
+xtick.direction: out
+xtick.labelsize: 17.0
+
+ytick.color: 000000
+ytick.direction: out
+ytick.labelsize: 17.0
+
+grid.color: E5E5E5
+grid.linestyle: -    # solid line
+
+figure.facecolor: white
+figure.edgecolor: 000000
+
+legend.fontsize: x-large
+legend.markerscale: 2.0
+
+boxplot.whiskers:    1.5
+boxplot.patchartist: True
+boxplot.showmeans:   True
+boxplot.showcaps:    True
+boxplot.showbox:     True
+boxplot.showfliers:  False
+boxplot.meanline:    False
+
+boxplot.boxprops.color:     None
+boxplot.boxprops.linewidth: 1.5
+boxplot.boxprops.linestyle: -
+
+boxplot.whiskerprops.color: black
+boxplot.whiskerprops.linewidth: 1.0
+boxplot.whiskerprops.linestyle: -
+
+boxplot.capprops.color:     black
+boxplot.capprops.linewidth: 1.0
+boxplot.capprops.linestyle: -
+
+boxplot.medianprops.color: black
+boxplot.medianprops.linewidth: 2.0
+boxplot.medianprops.linestyle: -
+
+boxplot.meanprops.color:           black
+boxplot.meanprops.marker:          ^
+boxplot.meanprops.markerfacecolor: black
+boxplot.meanprops.markeredgecolor: black
+boxplot.meanprops.markersize:      4
+boxplot.meanprops.linestyle:       --
+boxplot.meanprops.linewidth:       1.0

@@ -1,0 +1,6 @@
+matplotlib==3.3.3
+numpy==1.19.4
+pandas==1.2.0
+pytest==6.2.1
+scikit_learn==0.24.0
+statsmodels==0.12.1
