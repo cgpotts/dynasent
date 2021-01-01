@@ -201,7 +201,7 @@ def add_review_text_round2(dataset, yelp_index):
 ### SST-dev format
 
 ```python
-{'hit_ids': ['s[20533]'],
+{'hit_ids': ['s20533'],
  'sentence': '-LRB- A -RRB- n utterly charming and hilarious film that reminded me of the best of the Disney comedies from the 60s.',
  'tree': '(4 (2 (1 -LRB-) (2 (2 A) (3 -RRB-))) (4 (4 (2 n) (4 (3 (2 utterly) (4 (3 (4 charming) (2 and)) (4 hilarious))) (3 (2 film) (3 (2 that) (4 (4 (2 (2 reminded) (3 me)) (4 (2 of) (4 (4 (2 the) (4 best)) (2 (2 of) (3 (2 the) (3 (3 Disney) (2 comedies))))))) (2 (2 from) (2 (2 the) (2 60s)))))))) (2 .)))',
  'text_id': 'sst-dev-validate-0000437',
