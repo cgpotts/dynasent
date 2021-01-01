@@ -14,14 +14,14 @@ DynaSent is an English-language benchmark task for ternary (positive/negative/ne
 
 ## Citation
 
-[Christopher Potts](http://web.stanford.edu/~cgpotts/), [Zhengxuan Wu](http://zen-wu.social), Atticus Geiger, and [Douwe Kiela](https://douwekiela.github.io). 2020. DynaSent: A dynamic benchmark for sentiment analysis. Ms., Stanford University and Facebook AI Research.
+[Christopher Potts](http://web.stanford.edu/~cgpotts/), [Zhengxuan Wu](http://zen-wu.social), Atticus Geiger, and [Douwe Kiela](https://douwekiela.github.io). 2020. [DynaSent: A dynamic benchmark for sentiment analysis](https://arxiv.org/abs/2012.15349). Ms., Stanford University and Facebook AI Research.
 
 ```stex
   @article{potts-etal-2020-dynasent,
     title={{DynaSent}: A Dynamic Benchmark for Sentiment Analysis},
     author={Potts, Christopher and Wu, Zhengxuan and Geiger, Atticus and Kiela, Douwe},
-    journal={arXiv preprint},
-    url={},
+    journal={arXiv preprint arXiv:2012.15349},
+    url={https://arxiv.org/abs/2012.15349},
     year={2020}}
 ```
 
