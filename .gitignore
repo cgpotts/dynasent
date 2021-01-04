@@ -135,4 +135,7 @@ dynasent-v1/*
 img/*
 !img/.keepdir
 
+models/*
+!models/.keepdir
+
 .DS_Store

@@ -8,6 +8,7 @@ DynaSent is an English-language benchmark task for ternary (positive/negative/ne
 * [Dataset files](#dataset-files)
 * [Quick start](#quick-start)
 * [Data format](#data-format)
+* [Models](#models)
 * [Other files](#other-files)
 * [License](#license)
 
@@ -223,6 +224,56 @@ Details:
 * `'label_distribution':` response distribution from the MTurk validation task. The keys are  `('positive', 'negative', 'neutral')` and the values are lists of anonymized MTurk ids, which are used consistently throughout the dataset.
 * `'gold_label'`: the label chosen by at least three of the five workers if there is one (possible values: `'positive'`, `'negative'`, '`neutral'`, and `'mixed'`), else `None`.
 
+
+## Models
+
+Model 0 and Model 1 from the paper are available here:
+
+https://drive.google.com/drive/folders/1dpKrjNJfAILUQcJPAFc5YOXUT51VEjKQ?usp=sharing
+
+This repository includes a Python module `dynasent_models.py` that provides a [Hugging Face](https://huggingface.co)-based wrapper around these ([PyTorch](https://pytorch.org)) models. Simple examples:
+
+```python
+import os
+from dynasent_models import DynaSentModel
+
+# `dynasent_model0` should be downloaded from the above Google Drive link and 
+# placed in the `models` directory. `dynasent_model1` works the same way.
+model = DynaSentModel(os.path.join('models', 'dynasent_model0.bin'))
+
+examples = [
+    "superb",
+    "They said the experience would be amazing, and they were right!",
+    "They said the experience would be amazing, and they were wrong!"]
+
+model.predict(examples)
+```
+This should return the list `['positive', 'positive', 'negative']`.
+
+The `predict_proba` method provides access to the predicted distribution over the class labels; see the demo at the bottom of `dynasent_models.py` for details.
+
+The following code uses `load_dataset` from above to reproduce the Round 2 dev-set report on Model 0 from the paper:
+
+```python
+import os
+from sklearn.metrics import classification_report
+from dynasent_models import DynaSentModel
+
+dev_filename = os.path.join('dynasent-v1', 'dynasent-v1-round02-dynabench-dev.jsonl')
+
+dev = load_dataset(dev_filename)
+
+X_dev, y_dev = zip(*[(d['sentence'], d['gold_label']) for d in dev])
+
+model = DynaSentModel(os.path.join('models', 'dynasent_model0.bin'))
+
+preds = model.predict(X_dev)
+
+print(classification_report(y_dev, preds, digits=3))
+```
+For a fuller report on these models, see our paper and [our model card](dynasent_modelcard.md).
+
+
 ## Other files
 
 
@@ -243,6 +294,13 @@ The Python module `dynasent_utils.py` contains functions that support those note
 The [Datasheet](https://arxiv.org/abs/1803.09010) for our dataset:
 
 * [dynasent_datasheet.md](dynasent_datasheet.md)
+
+
+### Model Card
+
+The [Model Card](https://arxiv.org/pdf/1810.03993.pdf) for our models:
+
+* [dynasent_modelcard.md](dynasent_modelcard.md)
 
 
 ### Tests
