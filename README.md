@@ -28,23 +28,23 @@ DynaSent is an English-language benchmark task for ternary (positive/negative/ne
 
 ## Dataset files
 
-The dataset is [dynasent-v1.zip](dynasent-v1.zip), which is included in this repository.
+The dataset is [dynasent-v1.1.zip](dynasent-v1.1.zip), which is included in this repository. `v1.1` differs from `v1` only in that `v1.1` has proper unique ids for Round 1 and corrects a bug that led to some non-unique ids in Round 2. There are no changes to the examples or other metadata.
 
 The dataset consists of two rounds, each with a train/dev/test split:
 
 
 ### Round 1: Naturally occurring sentences
 
-* `dynasent-v1-round01-yelp-train.jsonl`
-* `dynasent-v1-round01-yelp-dev.jsonl`
-* `dynasent-v1-round01-yelp-test.jsonl`
+* `dynasent-v1.1-round01-yelp-train.jsonl`
+* `dynasent-v1.1-round01-yelp-dev.jsonl`
+* `dynasent-v1.1-round01-yelp-test.jsonl`
 
 
 ### Round 1: Sentences crowdsourced using Dynabench
 
-* `dynasent-v1-round02-dynabench-train.jsonl`
-* `dynasent-v1-round02-dynabench-dev.jsonl`
-* `dynasent-v1-round02-dynabench-test.jsonl`
+* `dynasent-v1.1-round02-dynabench-train.jsonl`
+* `dynasent-v1.1-round02-dynabench-dev.jsonl`
+* `dynasent-v1.1-round02-dynabench-test.jsonl`
 
 
 ### SST-dev revalidation
@@ -77,7 +77,7 @@ For example, to create a Round 1 train set restricting to examples with ternary 
 ```python
 import os
 
-r1_train_filename = os.path.join('dynasent-v1', 'dynasent-v1-round01-yelp-train.jsonl')
+r1_train_filename = os.path.join('dynasent-v1.1', 'dynasent-v1.1-round01-yelp-train.jsonl')
 
 ternary_labels = ('positive', 'negative', 'neutral')
 
@@ -98,7 +98,8 @@ X_train, y_train = zip(*[(d['sentence'], d['gold_label']) for d in r1_train])
  'model_0_probs': {'negative': 0.01173639390617609,
   'positive': 0.7473671436309814,
   'neutral': 0.24089649319648743},
- 'text_id': 'IDHkeGo-nxhqX4Exkdr08A',
+ 'text_id': 'r1-0000001',
+ 'review_id': 'IDHkeGo-nxhqX4Exkdr08A', 
  'review_rating': 1,
  'label_distribution': {'positive': ['w130', 'w186', 'w207', 'w264', 'w54'],
   'negative': [],
@@ -114,7 +115,8 @@ Details:
 * `'indices_into_review_text':` indices of `'sentence'` into the original review in the [Yelp Academic Dataset](https://www.yelp.com/dataset).
 * `'model_0_label'`: prediction of Model 0 as described in the paper. The possible values are `'positive'`, `'negative'`, and `'neutral'`.
 * `'model_0_probs'`: probability distribution predicted by Model 0. The keys are `('positive', 'negative', 'neutral')` and the values are floats.
-* `'text_id'`: review-level identifier for the review from the [Yelp Academic Dataset](https://www.yelp.com/dataset) containing `'sentence'`.
+* `'text_id'`: unique identifier for this entry.
+* `'review_id'`: review-level identifier for the review from the [Yelp Academic Dataset](https://www.yelp.com/dataset) containing `'sentence'`.
 * `'review_rating'`: review-level star-rating for the review containing `'sentence'` in the [Yelp Academic Dataset](https://www.yelp.com/dataset). The possible values are `1`, `2`, `3`, `4`, and `5`.
 * `'label_distribution':` response distribution from the MTurk validation task. The keys are `('positive', 'negative', 'neutral')` and the values are lists of anonymized MTurk ids, which are used consistently throughout the dataset.
 * `'gold_label'`: the label chosen by at least three of the five workers if there is one (possible values: `'positive'`, `'negative'`, '`neutral'`, and `'mixed'`), else `None`. 
@@ -159,7 +161,7 @@ def add_review_text_round1(dataset, yelp_index):
  'model_1_probs': {'negative': 0.29140257835388184,
   'positive': 0.6788994669914246,
   'neutral': 0.029697999358177185},
- 'text_id': 'd16069',
+ 'text_id': 'r2-0000001',
  'label_distribution': {'positive': ['w43', 'w26', 'w155', 'w23'],
   'negative': [],
   'neutral': [],
@@ -259,7 +261,7 @@ import os
 from sklearn.metrics import classification_report
 from dynasent_models import DynaSentModel
 
-dev_filename = os.path.join('dynasent-v1', 'dynasent-v1-round02-dynabench-dev.jsonl')
+dev_filename = os.path.join('dynasent-v1.1', 'dynasent-v1.1-round02-dynabench-dev.jsonl')
 
 dev = load_dataset(dev_filename)
 
