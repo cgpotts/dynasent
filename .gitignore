@@ -132,6 +132,7 @@ dmypy.json
 # Custom
 
 dynasent-v1/*
+dynasent-v1.1/*
 img/*
 !img/.keepdir
 

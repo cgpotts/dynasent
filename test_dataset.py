@@ -9,15 +9,15 @@ from dynasent_utils import load_dataset
 __author__ = 'Christopher Potts'
 
 
-src_dirname = 'dynasent-v1'
+src_dirname = 'dynasent-v1.1'
 
 r1_filename_template = os.path.join(
     src_dirname,
-    'dynasent-v1-round01-yelp-{}.jsonl')
+    'dynasent-v1.1-round01-yelp-{}.jsonl')
 
 r2_filename_template = os.path.join(
     src_dirname,
-    'dynasent-v1-round02-dynabench-{}.jsonl')
+    'dynasent-v1.1-round02-dynabench-{}.jsonl')
 
 sst_filename = os.path.join(
     src_dirname,
@@ -137,7 +137,6 @@ def _is_our_anonymized_mturk_id(s):
     return s.startswith("w") and not any(c.isupper() for c in s)
 
 
-
 @pytest.mark.parametrize('split', [
     'r2_train',
     'r2_dev',
@@ -174,3 +173,10 @@ def test_no_round2_assess_set_repeated_prompts(dataset):
         for d in dataset[split]:
             prompt_sentence = d['prompt_data']['prompt_sentence']
             assert len(all_prompts[prompt_sentence]) == 1
+
+
+def test_unique_ids(dataset):
+    all_ids = []
+    for split, exs in dataset.items():
+        all_ids += [d['text_id'] for d in exs]
+    assert len(all_ids) == len(set(all_ids))
