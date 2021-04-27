@@ -40,7 +40,7 @@ The dataset consists of two rounds, each with a train/dev/test split:
 * `dynasent-v1.1-round01-yelp-test.jsonl`
 
 
-### Round 1: Sentences crowdsourced using Dynabench
+### Round 2: Sentences crowdsourced using Dynabench
 
 * `dynasent-v1.1-round02-dynabench-train.jsonl`
 * `dynasent-v1.1-round02-dynabench-dev.jsonl`
