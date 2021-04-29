@@ -86,7 +86,7 @@ r1_train = load_dataset(r1_train_filename, labels=ternary_labels)
 X_train, y_train = zip(*[(d['sentence'], d['gold_label']) for d in r1_train])
 ```
 
-DynaSent rounds can also be accessed directly through [HuggingFace Datasets](https://huggingface.co/datasets/dynabench/dynasent) interface seamlessly:
+DynaSent rounds can also be accessed directly using the [HuggingFace Datasets](https://huggingface.co/datasets/dynabench/dynasent) library:
 
 ```python
 """
